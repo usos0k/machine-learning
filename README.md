@@ -33,4 +33,22 @@ To describe the supervised learning problem slightly more formally, our goal is,
 
 When the target variable that we’re trying to predict is continuous, such as in our housing example, we call the learning problem a regression problem. When y can take on only a small number of discrete values (such as if, given the living area, we wanted to predict if a dwelling is a house or an apartment, say), we call it a classification problem.
 
+# Multiple Features
+Note: [7:25 - θT is a 1 by (n+1) matrix and not an (n+1) by 1 matrix]
 
+Linear regression with multiple variables is also known as "multivariate linear regression".
+
+We now introduce notation for equations where we can have any number of input variables.
+
+x(i)jx(i)mn=value of feature j in the ith training example=the input (features) of the ith training example=the number of training examples=the number of features
+The multivariable form of the hypothesis function accommodating these multiple features is as follows:
+
+hθ(x)=θ0+θ1x1+θ2x2+θ3x3+⋯+θnxn
+In order to develop intuition about this function, we can think about θ0 as the basic price of a house, θ1 as the price per square meter, θ2 as the price per floor, etc. x1 will be the number of square meters in the house, x2 the number of floors, etc.
+
+Using the definition of matrix multiplication, our multivariable hypothesis function can be concisely represented as:
+
+hθ(x)=[θ0θ1...θn]⎡⎣⎢⎢⎢⎢x0x1⋮xn⎤⎦⎥⎥⎥⎥=θTx
+This is a vectorization of our hypothesis function for one training example; see the lessons on vectorization to learn more.
+
+Remark: Note that for convenience reasons in this course we assume x(i)0=1 for (i∈1,…,m). This allows us to do matrix operations with theta and x. Hence making the two vectors 'θ' and x(i) match each other element-wise (that is, have the same number of elements: n+1).]
